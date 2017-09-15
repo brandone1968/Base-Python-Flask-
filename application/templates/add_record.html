@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<div style="font-size: 1.5em;text-align: center">
+        <h3>Test Python Flask</h3>
+        <hr> <br><br><br>
+
+
+
+
+    <div class="row">
+        <div class="container-fluid">
+            <div class="well bs-component">
+
+
+                <form class="form-horizontal" method="post" action="/add_record">
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label for="user_ip" class="col-lg-4 control-label">Nome</label>
+
+                            <div class="col-lg-6">
+                                {{ form.nome (class="form-control") }}
+
+                                {% for error in form.errors.nome %} <br/>
+
+                                    <div class="alert alert-danger" style="display: inline-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user_agent" class="col-lg-4 control-label">Cognome</label>
+
+                            <div class="col-lg-6">
+                                {{ form.cognome (class="form-control") }}
+
+                                {% for error in form.errors.cognome %} <br/>
+
+                                    <div class="alert alert-danger" style="display: inline-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="user_agent" class="col-lg-4 control-label">Età</label>
+
+                            <div class="col-lg-6">
+                                {{ form.eta (class="form-control") }}
+
+                                {% for error in form.errors.eta %} <br/>
+
+                                    <div class="alert alert-danger" style="display: inline-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-lg-4  col-lg-offset-4">
+
+                                <button type="submit" class="btn btn-success">SALVA</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    </div>
+</div>
+
+{% endblock content %}
